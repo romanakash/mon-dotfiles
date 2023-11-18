@@ -1,35 +1,36 @@
 return {
   "neovim/nvim-lspconfig",
+  opts = {
+    inlay_hints = { enabled = true },
+  },
   init = function()
     function bemol()
-      local bemol_dir = vim.fs.find({ '.bemol' }, { upward = true, type = 'directory'})[1]
+      local bemol_dir = vim.fs.find({ ".bemol" }, { upward = true, type = "directory" })[1]
       local ws_folders_lsp = {}
       if bemol_dir then
-        local file = io.open(bemol_dir .. '/ws_root_folders', 'r')
+        local file = io.open(bemol_dir .. "/ws_root_folders", "r")
         if file then
-
-        for line in file:lines() do
-          table.insert(ws_folders_lsp, line)
-        end
-        file:close()
+          for line in file:lines() do
+            table.insert(ws_folders_lsp, line)
+          end
+          file:close()
         end
       end
 
       for _, line in ipairs(ws_folders_lsp) do
         vim.lsp.buf.add_workspace_folder(line)
       end
-
-      end
+    end
     bemol()
   end,
   dependencies = {
     {
-        "SmiteshP/nvim-navbuddy",
-        dependencies = {
-            "SmiteshP/nvim-navic",
-            "MunifTanjim/nui.nvim"
-        },
-        opts = { lsp = { auto_attach = true } }
-    }
+      "SmiteshP/nvim-navbuddy",
+      dependencies = {
+        "SmiteshP/nvim-navic",
+        "MunifTanjim/nui.nvim",
+      },
+      opts = { lsp = { auto_attach = true } },
+    },
   },
 }

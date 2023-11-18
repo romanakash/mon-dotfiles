@@ -5,10 +5,10 @@ return {
     name = "catppuccin",
     -- you can do it like this with a config function
     config = function()
-      require("catppuccin").setup {
+      require("catppuccin").setup({
         -- configurations
-        flavour = "mocha"
-      }
+        flavour = "mocha",
+      })
     end,
     -- or just use opts table
     opts = {
@@ -16,9 +16,21 @@ return {
     },
   },
   {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require("kanagawa").setup({
+        theme = "lotus",
+        background = { -- map the value of 'background' option to a theme
+          dark = "dragon", -- try "dragon" !
+          light = "lotus",
+        },
+      })
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "kanagawa",
     },
   },
 }
