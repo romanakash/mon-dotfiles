@@ -20,9 +20,9 @@ return {
     config = function()
       require("kanagawa").setup({
         theme = "lotus",
-        background = { -- map the value of 'background' option to a theme
-          dark = "dragon", -- try "dragon" !
-          light = "lotus",
+        background = {   -- map the value of 'background' option to a theme
+          dark = "wave", -- try "dragon" !
+          light = "wave",
         },
       })
     end,
