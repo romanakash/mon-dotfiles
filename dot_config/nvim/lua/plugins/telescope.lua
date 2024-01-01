@@ -16,6 +16,7 @@ return {
       end,
       keys = {
         { "<leader>sj", "<Cmd>Telescope jumplist<CR>", desc = "Jumps" },
+        { "<leader>sq", "<Cmd>Telescope quickfix<CR>", desc = "Jumps" },
       },
     },
   },
