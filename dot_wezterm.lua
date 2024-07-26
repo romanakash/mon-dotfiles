@@ -15,8 +15,8 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = "Kanagawa (Gogh)"
 
-config.font = wezterm.font("Iosevka Term Extended")
-config.font_size = 15.0
+config.font = wezterm.font("NotoMono NFM")
+config.font_size = 16.0
 
 config.keys = {
 	-- This will create a new split and run your default program inside it

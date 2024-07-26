@@ -5,7 +5,7 @@ return {
       formatters = {
         sql = {
           command = "sleek",
-          condition = function(ctx)
+          condition = function(self, ctx)
             if string.find(ctx.filename, ".sql") then
               return true
             else
